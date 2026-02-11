@@ -14,25 +14,25 @@
 .hero-status-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   transform: translateX(-28px);
 }
 
 .hero-status {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  gap: 0.6rem;
+  padding: 0.65rem 1.25rem;
   background: #1a1a1a;
   color: #fff;
   border-radius: 2rem;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
 .status-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: #22c55e;
   border-radius: 50%;
   animation: pulse 2s infinite;
@@ -47,8 +47,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  max-width: 1100px;
+  gap: 3.5rem;
+  max-width: 1200px;
 }
 
 @media (min-width: 900px) {
@@ -64,17 +64,17 @@
 }
 
 .hero-name {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
   font-weight: 800;
   color: #1a1a1a;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
 }
 
 .code-line {
   font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  margin-bottom: 1.25rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  margin-bottom: 1.5rem;
   color: #1a1a1a;
 }
 
@@ -107,9 +107,9 @@
 }
 
 .hero-intro {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #57534e;
-  max-width: 480px;
+  max-width: 540px;
   margin: 0 auto 2rem;
   line-height: 1.7;
 }
@@ -136,9 +136,9 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.9375rem;
+  gap: 0.6rem;
+  padding: 0.9rem 1.75rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   border-radius: 0.75rem;
   transition: all 0.2s ease;
@@ -176,16 +176,16 @@
 
 .hero-hi-bubble {
   position: absolute;
-  top: -35px;
+  top: -40px;
   left: 82%;
   transform: translateX(-50%);
   z-index: 10;
   background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%) padding-box,
     linear-gradient(135deg, #ddd6fe, #c4b5fd, #a78bfa, #e9d5ff) border-box;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  padding: 12px 20px;
+  padding: 14px 24px;
   border-radius: 55% 45% 52% 48% / 60% 55% 45% 50%;
   border: 2px solid transparent;
   box-shadow: 0 6px 24px rgba(167, 139, 250, 0.4);
@@ -194,8 +194,8 @@
 
 .hero-hi-bubble-small {
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(167, 139, 250, 0.4);
@@ -223,9 +223,9 @@
 }
 
 .hero-avatar {
-  width: 200px;
+  width: 280px;
   height: auto;
-  max-height: 320px;
+  max-height: 420px;
   object-fit: contain;
   filter: drop-shadow(0 0 1px #e9d5ff)
           drop-shadow(0 0 2px #ddd6fe)
@@ -257,6 +257,6 @@
 }
 
 .scroll-indicator .arrow {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 0.8;
 }
