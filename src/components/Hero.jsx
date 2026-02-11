@@ -2,15 +2,30 @@ import { useState, useEffect } from 'react'
 import './Hero.css'
 
 const ROLES = ['Software Engineer', 'Web Developer', 'Full-Stack Developer', 'Data Analyst', 'ML Enthusiast']
+const INTRO_TEXT = "Software Engineer specializing in full-stack development with React, Java, and Spring Boot. I build scalable, user-friendly applications and transform data into strategic decisions."
 
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
+  const [typedText, setTypedText] = useState('')
+  const [introDone, setIntroDone] = useState(false)
+
   useEffect(() => {
     const timer = setInterval(() => {
       setRoleIndex((i) => (i + 1) % ROLES.length)
     }, 2500)
     return () => clearInterval(timer)
   }, [])
+
+  useEffect(() => {
+    if (typedText.length < INTRO_TEXT.length) {
+      const timeout = setTimeout(() => {
+        setTypedText(INTRO_TEXT.slice(0, typedText.length + 1))
+      }, 35)
+      return () => clearTimeout(timeout)
+    } else {
+      setIntroDone(true)
+    }
+  }, [typedText])
 
   return (
     <section id="hero">
@@ -35,8 +50,7 @@ function Hero() {
               <span className="paren">);</span>
             </div>
             <p className="hero-intro">
-              Software Engineer specializing in full-stack development with React, Java, and Spring Boot. 
-              I build scalable, user-friendly applications and transform data into strategic decisions.
+              {typedText}<span className={`typing-cursor ${introDone ? 'blink-only' : ''}`}>|</span>
             </p>
           </div>
           <div className="hero-buttons">
