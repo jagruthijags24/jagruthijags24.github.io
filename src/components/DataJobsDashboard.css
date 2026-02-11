@@ -1,0 +1,102 @@
+.datajobs-dashboard {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(145deg, #0ea5e9 0%, #0369a1 100%);
+  padding: 12px 14px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.datajobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.datajobs-title {
+  font-weight: 700;
+  color: #fff;
+  font-size: 11px;
+}
+
+.datajobs-badge {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 600;
+  animation: datajobsPulse 2s ease-in-out infinite;
+}
+
+@keyframes datajobsPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.datajobs-metric {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.datajobs-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.4s ease;
+}
+
+.datajobs-label {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.datajobs-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 45px;
+  margin-bottom: 8px;
+}
+
+.datajobs-bar {
+  flex: 1;
+  min-width: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 3px 3px 0 0;
+  transition: height 0.5s ease;
+  animation: datajobsBarGlow 2s ease-in-out infinite;
+}
+
+.datajobs-bar:nth-child(odd) { animation-delay: 0.2s; }
+
+@keyframes datajobsBarGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.datajobs-role {
+  padding: 4px 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.datajobs-role-label {
+  font-size: 9px;
+  color: #fff;
+  font-weight: 600;
+  animation: datajobsFade 2.5s ease-in-out infinite;
+}
+
+@keyframes datajobsFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

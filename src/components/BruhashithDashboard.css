@@ -1,0 +1,129 @@
+.bruhashith-dashboard {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(145deg, #dc2626 0%, #991b1b 100%);
+  padding: 12px 14px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.bruhashith-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bruhashith-title {
+  font-weight: 700;
+  color: #fff;
+  font-size: 11px;
+}
+
+.bruhashith-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+  animation: bruhashithPulse 2s ease-in-out infinite;
+}
+
+@keyframes bruhashithPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.bruhashith-viewport {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.bruhashith-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bruhashith-logo {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  color: #dc2626;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.bruhashith-link {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.9);
+  animation: bruhashithLinkFade 3s ease-in-out infinite;
+}
+
+.bruhashith-link:nth-child(2) { animation-delay: 0s; }
+.bruhashith-link:nth-child(3) { animation-delay: 0.2s; }
+.bruhashith-link:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes bruhashithLinkFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.bruhashith-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bruhashith-line {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+  animation: bruhashithLinePulse 2s ease-in-out infinite;
+}
+
+.bruhashith-line.w1 { width: 90%; }
+.bruhashith-line.w2 { width: 70%; }
+.bruhashith-line.w3 { width: 50%; }
+
+@keyframes bruhashithLinePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.bruhashith-perf {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bruhashith-perf-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bruhashith-perf-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.bruhashith-perf-text {
+  font-size: 8px;
+  color: #fff;
+  font-weight: 600;
+}

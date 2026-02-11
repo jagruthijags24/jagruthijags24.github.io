@@ -1,0 +1,37 @@
+.certifications-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cert-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #1a2a4a;
+  transition: all 0.2s;
+}
+
+.cert-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.cert-item i {
+  font-size: 1.25rem;
+  color: #7c3aed;
+}

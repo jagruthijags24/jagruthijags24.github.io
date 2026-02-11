@@ -1,0 +1,447 @@
+@import url(importer.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+#main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-inline: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary);
+  background: var(--primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  text-align: center;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+
+
+
+.string {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  animation: move 4s infinite;
+}
+
+.greeting {
+  position: relative;
+  top: 8.6vmin;
+  animation: white-out 5s infinite;
+}
+
+
+.closure::before {
+  content: '';
+  position: absolute;
+  height: 25vmin;
+  width: 40vmin;
+  background: #282c34;
+  transform: translate(-40vmin, 5vmin);
+}
+.keyword {
+  color: rgb(6, 6, 6);
+}
+
+.dot {
+  color: rgb(6, 6, 6); /* Adjust if needed */
+}
+
+.function {
+  color: #050505;
+}
+
+.dynamic-text {
+  display: inline-block;
+  color: #0a0a0a; /* Adjust the color if needed */
+}
+
+.en {
+  color: #101010;
+}
+
+.es {
+  color: rgb(10, 10, 10);
+}
+
+.de {
+  color: #0b0b0b;
+}
+
+.it {
+  color: #0d0d0d;
+}
+
+@keyframes move {
+  25% {
+    transform: translatey(-5.8vmin);
+    opacity: 1;
+  }
+  50% {
+    transform: translatey(-11vmin);
+  }
+  75% {
+    transform: translatey(-16.5vmin);
+  }
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content */
+  align-items: center;
+  text-align: center;
+  padding: 20px; /* Reduce padding inside the box */
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contact .heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0.4px; /* Reduce space below heading */
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* Reduce text size slightly */
+  text-decoration: none;
+  color: black;
+  padding: 3px 5px; /* Reduce padding inside links */
+  margin: 0px 0; /* Reduce space between links */
+  width: 60%; 
+  transition: 0.3s;
+}
+
+.contact a i {
+  margin-right: 4px; /* Reduce space between icon and text */
+}
+
+.contact a:hover {
+  transform: scale(1.02);
+}
+
+
+ .container .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Fully Transparent Box */
+.aboutAndContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%; /* Adjust width */
+  max-width: 1000px; /* Limit max size */
+  padding: 20px;
+ 
+  border-radius: 15px; /* Rounded edges */
+  background: transparent; /* No background */
+}
+
+/* Profile Picture Styling */
+.about .profilePicture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: var(--instagramGradient);
+  margin: 0 auto;
+  
+}
+
+.about .profilePicture img {
+  width: 10rem;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  display: block;
+}
+
+/* Container Alignment */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Adds space between the boxes */
+}
+buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  color: white; /* White text */
+  border: 2px solid rgba(90, 90, 90, 0.6); /* Darker grey border */
+  background-color: rgba(60, 60, 60, 0.7); /* Darker transparent grey */
+}
+
+/* Background color for "Download CV" button */
+.buttons .notAvailable {
+  background-color: rgba(60, 60, 60, 0.7); /* Darker transparent grey */
+}
+
+.buttons .notAvailable:hover {
+  background-color: rgba(30, 30, 30, 0.9); /* Stronger dark grey on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Background color for "Contact Me" button */
+.buttons a[href="#contact"] {
+  background-color: rgba(60, 60, 60, 0.7); /* Darker transparent grey */
+}
+
+.buttons a[href="#contact"]:hover {
+  background-color: rgba(30, 30, 30, 0.9); /* Stronger dark grey on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+.experience {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.625rem;
+  background: var(--light-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+.experience:hover {
+  background-color: rgba(237, 225, 225, 0.5); /* Soft light reddish-black with more transparency */
+  color: #222222; /* Darker text for contrast */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 2px 4px 8px rgba(120, 30, 30, 0.2); /* Gentle reddish shadow */
+  border-color: rgba(214, 184, 184, 0.7); /* Slightly darker border */
+}
+.education {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.625rem;
+  background: var(--light-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+.education:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+.experience:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  color: white; /* White text */
+  border: 2px solid rgba(90, 90, 90, 0.6); /* Darker grey border */
+  background-color: rgba(60, 60, 60, 0.7); /* Darker transparent grey */
+}
+
+/* Background color for "Download CV" button */
+.buttons .notAvailable {
+  background-color: rgba(60, 60, 60, 0.7); /* Darker transparent grey */
+}
+
+.buttons .notAvailable:hover {
+  background-color: rgba(30, 30, 30, 0.9); /* Stronger dark grey on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Background color for "Contact Me" button */
+.buttons a[href="#contact"] {
+  background-color: rgba(60, 60, 60, 0.7); /* Darker transparent grey */
+}
+
+.buttons a[href="#contact"]:hover {
+  background-color: rgba(30, 30, 30, 0.9); /* Stronger dark grey on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+.experience {
+  margin-bottom: 1.5rem; /* Adds space between experience boxes */
+  padding: 1.5rem; /* Optional: Adds some inner spacing for better readability */
+  border-radius: 0.5rem; /* Optional: Rounds corners for a smoother look */
+  background-color: rgba(90, 90, 90, 0.1); /* Optional: Light grey background for differentiation */
+}
+.technologies span {
+  color: black; /* Text in black */
+  background-color: white; /* White background */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Style the buttons */
+.projectButtons a {
+  color: white; /* Text in white */
+  border: 2px solid black; /* Black border */
+  background-color: black; /* Black background */
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.projectButtons a:hover {
+  background-color: grey; /* Grey background on hover */
+  border-color: black;
+}
+
+/* Ensure icons inside buttons are visible */
+.projectButtons a i {
+  color: white;
+}
+
+/* Adjust the text colors for better contrast */
+.projectsTechTitle {
+  color: black; /* Black text */
+}
+
+.projectTitle {
+  color: black; /* Black text */
+}
+
+p {
+  color: black; /* Ensure paragraphs are readable */
+}
+.seeMoreBtn {
+  color: white; /* White text */
+  background-color: black; /* Black background */
+  border: 2px solid black; /* Black border */
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s;
+}
+
+.seeMoreBtn:hover {
+  background-color: grey; /* Grey on hover */
+  color: white;
+  border-color: black;
+}
+
+.seeMoreBtn i {
+  color: white; /* Ensure arrow icon is visible */
+}
+.hero {
+  display: flex;
+  flex-direction: column; /* Keeps 'Available For Work' on top */
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center; /* Aligns content vertically */
+  justify-content: space-between; /* Spreads text & image evenly */
+  max-width: 1200px; /* Adjust container width */
+  width: 100%;
+  margin: 20px auto; 
+  margin-left: 80px;/* Center content */
+  padding: 90px;
+}
+
+.hero-content {
+  text-align: center; /* Align text to left */
+  flex: 1;
+  padding: 20px; /* Allows text to take up remaining space */
+}
+
+.hero-image {
+  flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.hero-image img {
+  width: 180px; /* Adjust image size */
+  height: 300px;
+}
+.status {
+  position: absolute;
+  top: 120px; /* Adjust for proper placement */
+  left: 42%;
+  transform: translateX(-50%);
+  background: black; /* Adjust background for visibility */
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white; /* Ensure text is visible */
+  z-index: 10;
+  
+  margin-left:0px;
+}

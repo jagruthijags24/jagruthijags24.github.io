@@ -1,0 +1,130 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  background: rgba(245, 245, 247, 0.4);
+}
+
+#header.scrolled {
+  background: rgba(245, 245, 247, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-btn span {
+  width: 24px;
+  height: 2px;
+  background: #1a1a2e;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  background: #1a1a2e;
+  flex-direction: column;
+  padding: 100px 2rem 2rem;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links.active {
+  display: flex;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a {
+  color: #faf9f7;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #7c3aed;
+}
+
+.close-hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.nav-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-social a {
+  color: #1a1a2e;
+  font-size: 1.25rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.nav-social a:hover {
+  color: #7c3aed;
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    position: static;
+    width: auto;
+    background: none;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: #1a1a2e;
+  }
+
+  .nav-links .close-hint {
+    display: none;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}

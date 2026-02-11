@@ -1,0 +1,54 @@
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #1a2a4a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.1);
+}
+
+.education-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.education-card .school {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 0.25rem;
+}
+
+.education-card .location {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.education-card .details {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.education-card .period {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #7c3aed;
+}

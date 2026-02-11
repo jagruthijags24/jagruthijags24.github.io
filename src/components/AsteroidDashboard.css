@@ -1,0 +1,118 @@
+.asteroid-dashboard {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(145deg, #1e1b4b 0%, #312e81 100%);
+  padding: 12px 14px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.asteroid-header {
+  margin-bottom: 12px;
+}
+
+.asteroid-title {
+  font-weight: 700;
+  color: #c4b5fd;
+  font-size: 11px;
+}
+
+.asteroid-orbits {
+  position: relative;
+  height: 55px;
+  margin-bottom: 12px;
+}
+
+.asteroid-dot {
+  width: 8px;
+  height: 8px;
+  background: #fbbf24;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+}
+
+.asteroid-dot.a1 {
+  top: 10px;
+  left: 20%;
+  animation: asteroidOrbit1 4s linear infinite;
+}
+
+.asteroid-dot.a2 {
+  top: 25px;
+  left: 50%;
+  animation: asteroidOrbit2 3.5s linear infinite;
+}
+
+.asteroid-dot.a3 {
+  top: 40px;
+  left: 70%;
+  animation: asteroidOrbit3 4.5s linear infinite;
+}
+
+@keyframes asteroidOrbit1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+  25% { transform: translate(15px, -8px) scale(0.9); opacity: 0.8; }
+  50% { transform: translate(5px, 5px) scale(1); opacity: 1; }
+  75% { transform: translate(-10px, 3px) scale(0.95); opacity: 0.9; }
+}
+
+@keyframes asteroidOrbit2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-12px, 5px); }
+  66% { transform: translate(8px, -5px); }
+}
+
+@keyframes asteroidOrbit3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-15px, -3px); }
+}
+
+.asteroid-metric {
+  background: rgba(196, 181, 253, 0.15);
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.asteroid-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: #a78bfa;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+
+.asteroid-label {
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.asteroid-classes {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.asteroid-class {
+  font-size: 8px;
+  padding: 3px 8px;
+  background: rgba(71, 85, 105, 0.5);
+  color: #cbd5e1;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.asteroid-class.active {
+  background: #7c3aed;
+  color: #fff;
+  animation: asteroidClassPulse 2s ease-in-out infinite;
+}
+
+@keyframes asteroidClassPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}

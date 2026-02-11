@@ -1,0 +1,86 @@
+.portfolio-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(145deg, #7c3aed 0%, #5b21b6 100%);
+  padding: 12px 14px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.portfolio-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.portfolio-preview-title {
+  font-weight: 700;
+  color: #fff;
+  font-size: 11px;
+}
+
+.portfolio-preview-dot {
+  width: 8px;
+  height: 8px;
+  background: #a78bfa;
+  border-radius: 50%;
+  animation: portfolioDotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes portfolioDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.portfolio-preview-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.portfolio-preview-nav-item {
+  font-size: 8px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-preview-nav-item.active {
+  background: #fff;
+  color: #7c3aed;
+  font-weight: 600;
+  animation: portfolioNavActive 2s ease-in-out infinite;
+}
+
+@keyframes portfolioNavActive {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+
+.portfolio-preview-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-preview-card {
+  flex: 1;
+  min-width: 60px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  animation: portfolioCardGlow 2.5s ease-in-out infinite;
+}
+
+.portfolio-preview-card.small {
+  flex: 0 0 40%;
+}
+
+@keyframes portfolioCardGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

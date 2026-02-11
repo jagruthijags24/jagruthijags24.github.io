@@ -1,0 +1,102 @@
+.disease-prediction-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(145deg, #059669 0%, #047857 100%);
+  padding: 12px 14px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.disease-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.disease-preview-title {
+  font-weight: 700;
+  color: #fff;
+  font-size: 10px;
+}
+
+.disease-preview-badge {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+}
+
+.disease-preview-metric {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.disease-preview-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+
+.disease-preview-label {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.disease-preview-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.disease-preview-dot {
+  width: 6px;
+  height: 6px;
+  background: #a7f3d0;
+  border-radius: 50%;
+  animation: diseaseDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes diseaseDotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.disease-preview-status-text {
+  font-size: 9px;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.disease-preview-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 40px;
+}
+
+.disease-preview-bar {
+  flex: 1;
+  min-width: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 3px 3px 0 0;
+  transition: height 0.4s ease;
+  animation: diseaseBarPulse 2s ease-in-out infinite;
+}
+
+.disease-preview-bar:nth-child(odd) { animation-delay: 0.2s; }
+
+@keyframes diseaseBarPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

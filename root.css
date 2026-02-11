@@ -1,0 +1,29 @@
+:root {
+  --primary: #000000;
+  --primary-tr: rgba(0, 0, 0, 0.3);
+  --secondary: #ffffff;
+  --tertiary: rgba(26, 26, 26, 0.7);
+  --shadow: #272727;
+  --max-width: 1000px;
+  --global-padding: 1.25rem;
+  --border: #282c39;
+  --neon: #121212;
+  --gradient: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1%,
+    rgba(0, 0, 0, 0.8) 50%,
+    #000 100%
+  );
+  --textGradient: linear-gradient(90deg, #6d6d6d, #858585, #6d6d6d);
+  --titleGradient: linear-gradient(90deg, #000000, #ffffff, #000000);
+  --instagramGradient: conic-gradient(
+    from 180deg,
+    #f58529,
+    #dd2a7b,
+    #8134af,
+    #7f1392,
+    #f58529
+  );
+  --available: #00ff00;
+  --notAvailable: #ff0000;
+}

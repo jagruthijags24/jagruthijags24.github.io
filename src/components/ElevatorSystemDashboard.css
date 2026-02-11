@@ -1,0 +1,204 @@
+.elevator-dashboard {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+  padding: 10px 12px;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.elevator-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.elevator-dashboard-title {
+  font-weight: 700;
+  color: #f8fafc;
+  font-size: 11px;
+}
+
+.elevator-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.elevator-status.up {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.elevator-status.down {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.elevator-arrow {
+  font-size: 8px;
+  animation: elevatorBounce 1s ease-in-out infinite;
+}
+
+@keyframes elevatorBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.elevator-dashboard-body {
+  display: flex;
+  gap: 10px;
+}
+
+.elevator-shaft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(51, 65, 85, 0.4);
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.elevator-floor {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.elevator-floor-label {
+  width: 18px;
+  font-size: 8px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.elevator-car {
+  flex: 1;
+  height: 18px;
+  background: rgba(71, 85, 105, 0.5);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.elevator-car.present {
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+  animation: elevatorGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes elevatorGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.elevator-car-load {
+  font-size: 7px;
+  color: #fff;
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  line-height: 18px;
+}
+
+.elevator-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.elevator-current {
+  background: rgba(51, 65, 85, 0.5);
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.elevator-current-label {
+  display: block;
+  font-size: 7px;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.elevator-current-floor {
+  font-size: 16px;
+  font-weight: 800;
+  color: #38bdf8;
+  font-variant-numeric: tabular-nums;
+}
+
+.elevator-load-bar {
+  background: rgba(51, 65, 85, 0.5);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.elevator-load-label {
+  font-size: 7px;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.elevator-load-track {
+  height: 6px;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.elevator-load-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.elevator-queue {
+  background: rgba(51, 65, 85, 0.5);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.elevator-queue-label {
+  font-size: 7px;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.elevator-queue-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.elevator-queue-item {
+  background: #7c3aed;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 600;
+  animation: queuePulse 2s ease-in-out infinite;
+}
+
+.elevator-queue-item:nth-child(1) { animation-delay: 0s; }
+.elevator-queue-item:nth-child(2) { animation-delay: 0.3s; }
+.elevator-queue-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes queuePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

@@ -1,0 +1,231 @@
+/* Section Headings */
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-block: 1.25rem;
+  opacity: 0;
+  transform: translateY(1.875rem) scale(0.99);
+  transition: all 0.7s ease-in-out;
+}
+
+.sectionTitle.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.sectionTitle .mainTitle {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.sectionTitle .backTitle {
+  font-size: 3.125rem;
+  font-weight: 700;
+  background: var(--titleGradient);
+  background-clip: text;
+  color: transparent;
+  opacity: 0.15;
+  margin-top: -2.5rem;
+}
+
+/* About Section with Container */
+#about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.container .aboutAndContact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.aboutAndContact .about,
+.aboutAndContact .contact {
+  width: 28.125rem;
+  height: 22.75rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--border);
+}
+
+/* About */
+.container .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  gap: 0.625rem;
+}
+
+.about .profilePicture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: var(--instagramGradient);
+}
+
+.about .profilePicture img {
+  width: 9.5rem;
+  height: auto;
+  border-radius: 50%;
+  border: 0.3125rem solid var(--primary);
+}
+
+.about .information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.about .fullName,
+.about .role {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
+.about .role,
+.about .age,
+.about .address {
+  opacity: 0.7;
+}
+
+.about .age,
+.about .address {
+  font-size: 0.75rem;
+  line-height: 0.6875rem;
+}
+
+.about .address {
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contact */
+.container .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 3.125rem;
+}
+
+.contact .heading {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-left: -20px;
+}
+
+.contact .heading span {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact a i {
+  font-size: 1.6rem;
+}
+
+.contact a:hover .slide {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.contact .slide {
+  transform: translateX(-0.625rem);
+  opacity: 0;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Technologies I Use */
+#about .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about .wrapper h2 {
+  text-align: center;
+  padding-block: 3.125rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#about .techSkills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  max-width: 43.75rem;
+}
+
+.techSkills .tech {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.3125rem;
+  min-width: 12.5rem;
+  height: 9.375rem;
+  gap: 0.625rem;
+}
+
+.techSkills .techImages {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.625rem;
+}
+
+.techSkills .tech img {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.techSkills .percent {
+  display: flex;
+  align-items: center;
+  width: 6.25rem;
+  height: 0.25rem;
+  border-radius: 0.125rem;
+  background: var(--border);
+}
+
+.techSkills .percentage {
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+@media (max-width: 61.25rem) {
+  .aboutAndContact .about,
+  .aboutAndContact .contact {
+    width: 21.25rem;
+    height: 22.75rem;
+  }
+}
