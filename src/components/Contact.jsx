@@ -1,8 +1,10 @@
 import './Contact.css'
+import ScrollReveal from './ScrollReveal'
 
 function Contact() {
   return (
     <section id="contact" className="section contact-section">
+      <ScrollReveal from="left">
       <div className="section-header">
         <h2 className="section-title">Let's Connect</h2>
         <span className="section-back">Contact</span>
@@ -35,6 +37,7 @@ function Contact() {
       <p className="contact-note">
         <i className="bx bxs-map"></i> Mountain View, California · Willing to relocate
       </p>
+      </ScrollReveal>
     </section>
   )
 }

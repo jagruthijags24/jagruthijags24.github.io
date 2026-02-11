@@ -1,4 +1,5 @@
 import './Projects.css'
+import ScrollReveal from './ScrollReveal'
 import TaskManagerDashboard from './TaskManagerDashboard'
 import CyberSecurityDashboard from './CyberSecurityDashboard'
 import ElevatorSystemDashboard from './ElevatorSystemDashboard'
@@ -115,6 +116,7 @@ const PROJECTS = [
 function Projects() {
   return (
     <section id="projects" className="section projects-section">
+      <ScrollReveal from="right">
       <div className="section-header">
         <h2 className="section-title">My Projects</h2>
         <span className="section-back">Projects</span>
@@ -169,6 +171,7 @@ function Projects() {
           View All on GitHub <i className="bx bx-arrow-back"></i>
         </a>
       </div>
+      </ScrollReveal>
     </section>
   )
 }

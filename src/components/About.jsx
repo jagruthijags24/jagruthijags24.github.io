@@ -1,4 +1,5 @@
 import './About.css'
+import ScrollReveal from './ScrollReveal'
 
 const TECHNOLOGIES = [
   { name: 'React', icon: 'fa-brands fa-react' },
@@ -18,6 +19,7 @@ const TECHNOLOGIES = [
 function About() {
   return (
     <section id="about" className="section">
+      <ScrollReveal from="left">
       <div className="section-header">
         <h2 className="section-title">About Me</h2>
         <span className="section-back">About Me</span>
@@ -55,6 +57,7 @@ function About() {
           </div>
         </div>
       </div>
+      </ScrollReveal>
     </section>
   )
 }

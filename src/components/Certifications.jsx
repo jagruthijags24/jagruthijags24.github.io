@@ -1,4 +1,5 @@
 import './Certifications.css'
+import ScrollReveal from './ScrollReveal'
 
 const CERTIFICATIONS = [
   'Oracle Cloud Infrastructure 2025 Gen AI Professional',
@@ -10,6 +11,7 @@ const CERTIFICATIONS = [
 function Certifications() {
   return (
     <section id="certifications" className="section">
+      <ScrollReveal from="right">
       <div className="section-header">
         <h2 className="section-title">Certifications</h2>
         <span className="section-back">Certifications</span>
@@ -24,6 +26,7 @@ function Certifications() {
           ))}
         </div>
       </div>
+      </ScrollReveal>
     </section>
   )
 }

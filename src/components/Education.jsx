@@ -1,4 +1,5 @@
 import './Education.css'
+import ScrollReveal from './ScrollReveal'
 
 const EDUCATION = [
   {
@@ -20,6 +21,7 @@ const EDUCATION = [
 function Education() {
   return (
     <section id="education" className="section">
+      <ScrollReveal from="left">
       <div className="section-header">
         <h2 className="section-title">Education</h2>
         <span className="section-back">Education</span>
@@ -35,6 +37,7 @@ function Education() {
           </div>
         ))}
       </div>
+      </ScrollReveal>
     </section>
   )
 }

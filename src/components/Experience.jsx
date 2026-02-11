@@ -1,4 +1,5 @@
 import './Experience.css'
+import ScrollReveal from './ScrollReveal'
 
 const EXPERIENCES = [
   {
@@ -31,6 +32,7 @@ const EXPERIENCES = [
 function Experience() {
   return (
     <section id="experience" className="section experience-section">
+      <ScrollReveal from="right">
       <div className="section-header">
         <h2 className="section-title">Experience</h2>
         <span className="section-back">Experience</span>
@@ -51,6 +53,7 @@ function Experience() {
           </div>
         ))}
       </div>
+      </ScrollReveal>
     </section>
   )
 }

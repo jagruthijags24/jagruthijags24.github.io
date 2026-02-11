@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './Hero.css'
 
 const ROLES = ['Software Engineer', 'Web Developer', 'Full-Stack Developer', 'Data Analyst', 'ML Enthusiast']
-const INTRO_TEXT = "Software Engineer specializing in full-stack development with React, Java, and Spring Boot. I build scalable, user-friendly applications and transform data into strategic decisions."
+const INTRO_TEXT = "I am a Software Engineer specializing in full-stack development with React, Java, Spring Boot, AI and related technologies. I build scalable, user-friendly applications and transform data into strategic decisions."
 
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)

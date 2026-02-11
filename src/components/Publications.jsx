@@ -1,8 +1,10 @@
 import './Publications.css'
+import ScrollReveal from './ScrollReveal'
 
 function Publications() {
   return (
     <section id="publications" className="section">
+      <ScrollReveal from="left">
       <div className="section-header">
         <h2 className="section-title">Publications</h2>
         <span className="section-back">Publications</span>
@@ -29,6 +31,7 @@ function Publications() {
           DOI: 10.1109/ICCCI56745.2023.10128477 <i className="bx bx-link-external"></i>
         </a>
       </div>
+      </ScrollReveal>
     </section>
   )
 }
