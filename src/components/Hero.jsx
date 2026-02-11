@@ -5,8 +5,6 @@ const ROLES = ['Software Engineer', 'Web Developer', 'Full-Stack Developer', 'Da
 
 function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
-  const [useGif, setUseGif] = useState(true)
-
   useEffect(() => {
     const timer = setInterval(() => {
       setRoleIndex((i) => (i + 1) % ROLES.length)
@@ -56,10 +54,9 @@ function Hero() {
             Hi
           </span>
           <img 
-            src={useGif ? "/Images/Profile/higirlimage.gif" : "/Images/Profile/higirlimage.png"}
+            src="/Images/Profile/higirlimage.png?v=2"
             alt="Jagruthi - Software Engineer" 
             className="hero-avatar"
-            onError={(e) => { e.target.onerror = null; setUseGif(false) }}
           />
         </div>
       </div>
