@@ -38,7 +38,7 @@ function Header({ menuOpen, setMenuOpen }) {
         </ul>
         <div className="nav-social">
           <a href="https://github.com/jagruthijags24" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/jagruthi-pullaiahgari/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-linkedin-square"></i></a>
+          <a href="https://www.linkedin.com/in/jagruthipullaiahgari/" target="_blank" rel="noopener noreferrer"><i className="bx bxl-linkedin-square"></i></a>
         </div>
       </nav>
     </header>

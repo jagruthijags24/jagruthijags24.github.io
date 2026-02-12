@@ -18,7 +18,7 @@ function Contact() {
           <span>GitHub</span>
           <i className="bx bx-right-arrow-alt"></i>
         </a>
-        <a href="https://www.linkedin.com/in/jagruthi-pullaiahgari/" target="_blank" rel="noopener noreferrer" className="contact-link">
+        <a href="https://www.linkedin.com/in/jagruthipullaiahgari/" target="_blank" rel="noopener noreferrer" className="contact-link">
           <i className="fa-brands fa-linkedin"></i>
           <span>LinkedIn</span>
           <i className="bx bx-right-arrow-alt"></i>
