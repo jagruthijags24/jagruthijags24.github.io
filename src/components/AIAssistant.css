@@ -1,3 +1,9 @@
+/* Book dimensions - single source of truth for all pages */
+.ai-widget-wrapper {
+  --ai-page-w: 360px;
+  --ai-page-h: 480px;
+}
+
 /* Floating button - bottom right, max z-index for visibility */
 .ai-fab {
   position: fixed;
@@ -37,8 +43,10 @@
 /* 3D book container */
 .ai-book-3d {
   position: relative;
-  width: 360px;
-  height: 480px;
+  width: var(--ai-page-w);
+  height: var(--ai-page-h);
+  min-width: var(--ai-page-w);
+  min-height: var(--ai-page-h);
   transform-style: preserve-3d;
 }
 
@@ -47,8 +55,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 360px;
-  height: 480px;
+  width: var(--ai-page-w);
+  height: var(--ai-page-h);
+  min-width: var(--ai-page-w);
+  min-height: var(--ai-page-h);
   transform-origin: left center;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -174,8 +184,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 360px;
-  height: 480px;
+  width: var(--ai-page-w);
+  height: var(--ai-page-h);
+  min-width: var(--ai-page-w);
+  min-height: var(--ai-page-h);
   transform-origin: left center;
   background: 
     linear-gradient(90deg, transparent 85%, rgba(200,195,185,0.4) 92%, rgba(185,180,170,0.5) 96%, rgba(175,170,160,0.3) 100%),
