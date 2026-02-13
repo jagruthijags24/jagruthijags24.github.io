@@ -8,7 +8,7 @@
   padding: 120px 1.5rem 3rem;
   position: relative;
   background: linear-gradient(135deg, #fff 0%, #fdfbf8 30%, #f9f6f2 60%, #f3f0eb 100%);
-  border-bottom: 1px solid #1a2a4a;
+  border-bottom: 1px solid rgba(26, 42, 74, 0.12);
 }
 
 .hero-status-wrap {
