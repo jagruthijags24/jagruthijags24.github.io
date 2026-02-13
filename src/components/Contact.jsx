@@ -35,7 +35,7 @@ function Contact() {
         </a>
       </div>
       <p className="contact-note">
-        <i className="bx bxs-map"></i> USA · Willing to relocate
+        <i className="bx bxs-map"></i> Mountain View, California · Willing to relocate
       </p>
       </ScrollReveal>
     </section>

@@ -18,7 +18,7 @@ const TECHNOLOGIES = [
 
 function About() {
   return (
-    <section id="about" className="section about-section">
+    <section id="about" className="section">
       <ScrollReveal from="left">
       <div className="section-header">
         <h2 className="section-title">About Me</h2>
@@ -32,7 +32,7 @@ function About() {
             </div>
             <div className="profile-info">
               <h3>Jagruthi Pullaiahgari</h3>
-              <p><i className="bx bxs-map"></i> USA</p>
+              <p><i className="bx bxs-map"></i> Mountain View, California</p>
               <p className="summary-text">
                 Software Engineer with hands-on experience in full-stack and frontend development. 
                 Strong foundation in Agile/Scrum, cloud platforms, and scalable application design. 
@@ -41,17 +41,15 @@ function About() {
             </div>
           </div>
           <div className="tech-grid">
-            <h4><i className="bx bx-code-alt"></i> Technologies I Work With</h4>
+            <h4>Technologies I Work With</h4>
             <div className="tech-list">
               {TECHNOLOGIES.map((tech) => (
                 <div key={tech.name} className="tech-item">
-                  <span className="tech-icon-wrap">
-                    {tech.type === 'img' ? (
-                      <img src={tech.icon} alt={tech.name} />
-                    ) : (
-                      <i className={tech.icon}></i>
-                    )}
-                  </span>
+                  {tech.type === 'img' ? (
+                    <img src={tech.icon} alt={tech.name} />
+                  ) : (
+                    <i className={tech.icon}></i>
+                  )}
                   <span>{tech.name}</span>
                 </div>
               ))}
