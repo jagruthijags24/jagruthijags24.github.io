@@ -123,7 +123,7 @@ function AIAssistant() {
           onClick={() => { setShowToast(false); setOpen(true) }}
           style={{
             position: 'fixed',
-            top: '5.5rem',
+            bottom: '5rem',
             right: '1.5rem',
             zIndex: 2147483647,
             display: 'flex',

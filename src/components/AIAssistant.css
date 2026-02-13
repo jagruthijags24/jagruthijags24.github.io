@@ -453,10 +453,10 @@
   cursor: not-allowed;
 }
 
-/* Toast pointing to AI chatbot - top right, above content */
+/* Toast pointing to AI chatbot - bottom right, above FAB */
 .ai-toast {
   position: fixed;
-  top: 5.5rem;
+  bottom: 5rem;
   right: 1.5rem;
   z-index: 2147483647;
   display: flex;
