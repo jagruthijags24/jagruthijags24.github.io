@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import './AIAssistant.css'
 
 const API_URL = import.meta.env.VITE_AI_API_URL || ''
@@ -77,14 +78,32 @@ function AIAssistant() {
     setLoading(false)
   }
 
-  return (
+  const ui = (
     <>
       <button
         className="ai-fab"
         onClick={() => setOpen(!open)}
         aria-label="Open Jags - Ask about Jagruthi"
+        style={{
+          position: 'fixed',
+          bottom: '1.5rem',
+          right: '1.5rem',
+          zIndex: 2147483647,
+          width: 56,
+          height: 56,
+          borderRadius: '50%',
+          background: '#0284c7',
+          color: '#fff',
+          border: '3px solid #0ea5e9',
+          boxShadow: '0 4px 20px rgba(2,132,199,0.5)',
+          cursor: 'pointer',
+          fontSize: '1.5rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
-        <i className="bx bx-chat"></i>
+        <i className="bx bx-chat" aria-hidden></i>
       </button>
 
       {open && (
@@ -144,6 +163,8 @@ function AIAssistant() {
       )}
     </>
   )
+
+  return createPortal(ui, document.body)
 }
 
 export default AIAssistant
