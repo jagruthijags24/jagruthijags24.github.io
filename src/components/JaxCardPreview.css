@@ -1,0 +1,21 @@
+.jaxcard-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  background: #f1f5f9;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.jaxcard-preview-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  border: none;
+  display: block;
+  transform-origin: top left;
+}
+
+.jaxcard-preview-iframe {
+  pointer-events: none;
+}
