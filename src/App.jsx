@@ -8,6 +8,7 @@ import Experience from './components/Experience'
 import Publications from './components/Publications'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
+import AIAssistant from './components/AIAssistant'
 import Footer from './components/Footer'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <>
       {menuOpen && <div className="menu-overlay" onClick={() => setMenuOpen(false)} aria-hidden="true" />}
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <AIAssistant />
       <main>
         <Hero />
         <About />
