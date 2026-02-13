@@ -169,13 +169,13 @@
   z-index: 10;
 }
 
-/* Chat widget panel - open book with spiral binding */
+/* Chat widget panel - open book with spiral binding, same size as flipping pages */
 .ai-widget {
   position: absolute;
   left: 0;
   top: 0;
   width: 360px;
-  max-height: 480px;
+  height: 480px;
   transform-origin: left center;
   background: 
     linear-gradient(90deg, transparent 85%, rgba(200,195,185,0.4) 92%, rgba(185,180,170,0.5) 96%, rgba(175,170,160,0.3) 100%),
