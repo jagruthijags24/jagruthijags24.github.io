@@ -84,6 +84,29 @@ nav {
   color: #7c3aed;
 }
 
+.nav-chat-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.nav-links .nav-chat-btn {
+  color: #faf9f7;
+}
+
+@media (min-width: 768px) {
+  .nav-links .nav-chat-btn {
+    color: #1a1a2e;
+  }
+}
+
 .close-hint {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.875rem;

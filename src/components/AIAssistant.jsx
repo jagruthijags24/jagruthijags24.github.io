@@ -8,7 +8,6 @@ const MOCK_ANSWERS = {
   who: "I'm Jagruthi Pullaiahgari (people call me Jags!). I'm a Software Engineer specializing in full-stack development with React, Java, Spring Boot, AI and related technologies. I build scalable, user-friendly applications and transform data into strategic decisions. I'm based in the USA and available for work.",
   skills: "Jagruthi works with React, JavaScript, Java, Python, Spring Boot, Node.js, HTML/CSS, Git, Firebase, Tableau, PostgreSQL, and AWS. She has strong foundations in Agile/Scrum, cloud platforms, and scalable application design, plus exposure to AI and Gen AI through ML, NLP, and data-driven projects.",
   experience: "Jagruthi was an Application Developer Intern at Salesforce (Jul–Dec 2022) in Andhra Pradesh, India—improving backend performance 20%, building features with Java/Apex/Lightning, and working in Agile. Before that, she was a Web Developer Intern at Bruhashith (Jan–Jun 2022), reducing page load time by 30% with HTML, CSS, JavaScript, and Angular.",
-  contact: "You can reach Jagruthi via GitHub (jagruthijags24), LinkedIn (jagruthipullaiahgari), email (jagruthipullaiahgari@gmail.com), or phone (603-202-2119). She's based in the USA, willing to relocate, and open to new opportunities!",
   projects: "Her projects include: JaxCard with AI (React credit card site with AI chatbot), Data Jobs Dashboard (Power BI/Tableau), Bitcoin Price Prediction (83% accuracy with NLP), Cyber Security Attack Dashboard, Task Manager (React + Spring Boot), Elevator System Simulation, Asteroid Classification, Bruhashith Company Website, Portfolio Website, Disease Prediction, Risk Analytics for Banking, and an IEEE-published Research Paper on Cloud Data Security.",
   hobbies: "Jagruthi enjoys exploring new technologies, building side projects, coding for fun, reading tech blogs and books, and staying curious about AI and machine learning. She loves turning ideas into working applications!",
   interests: "She's interested in full-stack development, AI/ML, data analytics, cloud computing, and creating scalable, user-friendly applications. She's passionate about Agile practices, Gen AI, and continuous learning.",
@@ -23,7 +22,7 @@ function getMockResponse(query) {
   if (q.includes('who') || q.includes('about') || q.includes('introduce') || q.includes('jagruthi') || q.includes('jags')) return MOCK_ANSWERS.who
   if (q.includes('skill') || q.includes('tech') || q.includes('work with') || q.includes('technolog')) return MOCK_ANSWERS.skills
   if (q.includes('experience') || q.includes('work') || q.includes('intern') || q.includes('salesforce') || q.includes('bruhashith')) return MOCK_ANSWERS.experience
-  if (q.includes('contact') || q.includes('reach') || q.includes('hire') || q.includes('email') || q.includes('linkedin') || q.includes('phone') || q.includes('github')) return MOCK_ANSWERS.contact
+  if (q.includes('contact') || q.includes('reach') || q.includes('hire') || q.includes('email') || q.includes('linkedin') || q.includes('phone') || q.includes('github')) return { contact: true }
   if (q.includes('project')) return MOCK_ANSWERS.projects
   if (q.includes('hobb')) return MOCK_ANSWERS.hobbies
   if (q.includes('interest') || q.includes('passion') || q.includes('like')) return MOCK_ANSWERS.interests
@@ -50,6 +49,7 @@ async function sendToAPI(message) {
 
 function AIAssistant() {
   const [open, setOpen] = useState(false)
+  const [showToast, setShowToast] = useState(false)
   const [messages, setMessages] = useState([
     { role: 'assistant', text: "Hi! I'm Jags, Jagruthi's assistant. Ask me anything about her—skills, hobbies, interests, experience, projects, or how to contact her!" },
   ])
@@ -60,6 +60,39 @@ function AIAssistant() {
   useEffect(() => {
     listRef.current?.scrollTo(0, listRef.current.scrollHeight)
   }, [messages])
+
+  useEffect(() => {
+    const handler = () => setOpen(true)
+    window.addEventListener('open-ai-chat', handler)
+    return () => window.removeEventListener('open-ai-chat', handler)
+  }, [])
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowToast(true), 800)
+    return () => clearTimeout(t)
+  }, [])
+
+  useEffect(() => {
+    if (!showToast) return
+    const t = setTimeout(() => setShowToast(false), 8000)
+    return () => clearTimeout(t)
+  }, [showToast])
+
+  useEffect(() => {
+    if (open) setShowToast(false)
+  }, [open])
+
+  const contactContent = (
+    <>
+      You can reach Jagruthi via GitHub (
+      <a href="https://github.com/jagruthijags24" target="_blank" rel="noopener noreferrer">jagruthijags24</a>
+      ), LinkedIn (
+      <a href="https://www.linkedin.com/in/jagruthipullaiahgari/" target="_blank" rel="noopener noreferrer">jagruthipullaiahgari</a>
+      ), email (
+      <a href="mailto:jagruthipullaiahgari@gmail.com">jagruthipullaiahgari@gmail.com</a>
+      ), or phone (603-202-2119). She's based in the USA, willing to relocate, and open to new opportunities!
+    </>
+  )
 
   const handleSend = async () => {
     const text = input.trim()
@@ -74,12 +107,41 @@ function AIAssistant() {
     if (reply == null) {
       reply = getMockResponse(text)
     }
-    setMessages((m) => [...m, { role: 'assistant', text: reply }])
+    const isContact = reply && typeof reply === 'object' && reply.contact
+    setMessages((m) => [...m, isContact
+      ? { role: 'assistant', content: contactContent }
+      : { role: 'assistant', text: reply }])
     setLoading(false)
   }
 
   const ui = (
     <>
+      {showToast && (
+        <div
+          className="ai-toast"
+          role="alert"
+          onClick={() => { setShowToast(false); setOpen(true) }}
+          style={{
+            position: 'fixed',
+            top: '5.5rem',
+            right: '1.5rem',
+            zIndex: 2147483647,
+            display: 'flex',
+            visibility: 'visible',
+          }}
+        >
+          <span className="ai-toast-arrow" aria-hidden>↘</span>
+          <p>Talk with assistant <strong>Jags</strong> to know more!</p>
+          <button
+            type="button"
+            className="ai-toast-close"
+            onClick={(e) => { e.stopPropagation(); setShowToast(false) }}
+            aria-label="Dismiss"
+          >
+            <i className="bx bx-x"></i>
+          </button>
+        </div>
+      )}
       <button
         className="ai-fab"
         onClick={() => setOpen(!open)}
@@ -140,7 +202,7 @@ function AIAssistant() {
           <div className="ai-messages" ref={listRef}>
             {messages.map((msg, i) => (
               <div key={i} className={`ai-msg ai-msg--${msg.role}`}>
-                {msg.text}
+                {msg.content ?? msg.text}
               </div>
             ))}
             {loading && <div className="ai-msg ai-msg--assistant ai-msg--loading">Thinking...</div>}
