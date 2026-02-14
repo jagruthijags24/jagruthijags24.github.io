@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Mickey ears -->
+  <circle cx="12" cy="20" r="14" fill="#1a1a1a"/>
+  <circle cx="52" cy="20" r="14" fill="#1a1a1a"/>
+  <!-- Mickey face -->
+  <circle cx="32" cy="38" r="20" fill="#1a1a1a"/>
+  <!-- Headphones - band over head -->
+  <path d="M 4 18 Q 32 4 60 18" stroke="#2d2d2d" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Headphone earcups on ears -->
+  <circle cx="14" cy="22" r="7" fill="#404040" stroke="#1a1a1a" stroke-width="1.5"/>
+  <circle cx="50" cy="22" r="7" fill="#404040" stroke="#1a1a1a" stroke-width="1.5"/>
+  <!-- Mickey eyes -->
+  <ellipse cx="26" cy="35" rx="4" ry="5" fill="white"/>
+  <ellipse cx="38" cy="35" rx="4" ry="5" fill="white"/>
+  <!-- Mickey smile -->
+  <path d="M 24 48 Q 32 56 40 48" stroke="#1a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>
