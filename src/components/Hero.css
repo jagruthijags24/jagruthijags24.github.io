@@ -74,6 +74,19 @@
   letter-spacing: -0.02em;
 }
 
+.hero-name-jagruthi {
+  display: inline-block;
+}
+
+.hero-name-jagruthi-slot {
+  visibility: hidden;
+}
+
+.hero-name-gap {
+  display: inline-block;
+  width: 0.5em;
+}
+
 .code-line {
   font-family: 'JetBrains Mono', monospace;
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);

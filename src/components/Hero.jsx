@@ -39,7 +39,14 @@ function Hero({ introOverlayDone }) {
                 Available For Work
               </div>
             </div>
-            <h1 className="hero-name">Jagruthi Pullaiahgari</h1>
+            <h1 className="hero-name">
+              {introOverlayDone ? (
+                <span className="hero-name-jagruthi">JAGRUTHI</span>
+              ) : (
+                <span id="hero-name-jagruthi" className="hero-name-jagruthi hero-name-jagruthi-slot" aria-hidden="true">JAGRUTHI</span>
+              )}
+              <span className="hero-name-gap"> </span>PULLAIAHGARI
+            </h1>
             <div className="code-line">
               <span className="keyword">System</span>
               <span className="dot">.</span>
