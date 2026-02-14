@@ -4,7 +4,7 @@ import './IntroOverlay.css'
 const NAME = 'JAGRUTHI'
 
 function IntroOverlay({ onComplete }) {
-  const [phase, setPhase] = useState('idle') // idle | title | hold | merge | done
+  const [phase, setPhase] = useState('idle') // idle | title | hold | merge | fade
   const [unmounted, setUnmounted] = useState(false)
   const [mergeStyle, setMergeStyle] = useState(null)
   const titleRef = useRef(null)
@@ -30,7 +30,7 @@ function IntroOverlay({ onComplete }) {
 
   useEffect(() => {
     if (phase === 'merge') {
-      setMergeStyle({ '--merge-x': '0px', '--merge-y': '0px', '--merge-scale': '1' })
+      setMergeStyle({ '--merge-x': '0px', '--merge-y': '0px', '--merge-scale': '0.3' })
       const applyTarget = () => {
         const heroJagruthi = document.getElementById('hero-name-jagruthi')
         const titleEl = titleRef.current
@@ -54,14 +54,24 @@ function IntroOverlay({ onComplete }) {
       const t1 = requestAnimationFrame(() =>
         requestAnimationFrame(() => requestAnimationFrame(applyTarget))
       )
-      const t2 = setTimeout(() => {
+      return () => cancelAnimationFrame(t1)
+    }
+  }, [phase, onComplete])
+
+  useEffect(() => {
+    if (phase === 'merge') {
+      const t = setTimeout(() => {
         onComplete?.()
-        setUnmounted(true)
-      }, 1300)
-      return () => {
-        cancelAnimationFrame(t1)
-        clearTimeout(t2)
-      }
+        setPhase('fade')
+      }, 1200)
+      return () => clearTimeout(t)
+    }
+  }, [phase, onComplete])
+
+  useEffect(() => {
+    if (phase === 'fade') {
+      const t = setTimeout(() => setUnmounted(true), 500)
+      return () => clearTimeout(t)
     }
   }, [phase, onComplete])
 
@@ -74,7 +84,7 @@ function IntroOverlay({ onComplete }) {
       <div className="intro-frame">
         <h1
           ref={titleRef}
-          className={`intro-title shorts-title ${phase !== 'idle' ? 'visible' : ''} ${phase === 'merge' ? 'merge' : ''}`}
+          className={`intro-title shorts-title ${phase !== 'idle' ? 'visible' : ''} ${phase === 'merge' || phase === 'fade' ? 'merge' : ''}`}
           style={mergeStyle}
         >
           {NAME.split('').map((letter, i) => (

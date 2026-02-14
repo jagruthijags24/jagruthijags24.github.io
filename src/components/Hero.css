@@ -72,6 +72,7 @@
   color: #1a1a1a;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .hero-name-jagruthi {
@@ -210,6 +211,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 1.5rem;
 }
 
 .hero-hi-bubble {

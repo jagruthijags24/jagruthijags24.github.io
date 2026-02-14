@@ -26,6 +26,7 @@
 .intro-overlay.intro-shorts.fade {
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.5s ease-out;
 }
 
 /* Ivory gradient background */
@@ -83,6 +84,20 @@
   paint-order: stroke fill;
 }
 
+/* Merge animation - title moves from center to hero slot */
+.intro-title.shorts-title.merge {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(
+      calc(-50% + var(--merge-x, 0px)),
+      calc(-50% + var(--merge-y, 0px))
+    )
+    scale(var(--merge-scale, 1));
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
 .intro-title.shorts-title .intro-letter {
   display: inline-block;
   opacity: 0;
@@ -97,29 +112,6 @@
 /* Glitch effect on hold - applied to whole title */
 .intro-overlay.intro-shorts.hold .intro-title.shorts-title {
   animation: shortsGlitch 2.5s ease-in-out infinite 0.8s;
-}
-
-/* Merge: JAGRUTHI moves to hero name in portfolio */
-.intro-title.shorts-title.merge {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) translate(var(--merge-x, 0), var(--merge-y, 0)) scale(var(--merge-scale, 0.35));
-  animation: none;
-  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.intro-overlay.intro-shorts.merge .intro-title.shorts-title {
-  animation: none;
-}
-
-.intro-overlay.intro-shorts.merge .intro-title.shorts-title.merge {
-  transform: translate(-50%, -50%) translate(var(--merge-x, 0), var(--merge-y, 0)) scale(var(--merge-scale, 0.35));
-}
-
-.intro-overlay.intro-shorts.merge .intro-subtitle {
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
 }
 
 @keyframes shortsLetterPop {
@@ -184,7 +176,12 @@
   opacity: 1;
 }
 
-.intro-overlay.intro-shorts.fade .intro-title,
+.intro-overlay.intro-shorts.fade .intro-title.merge {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  /* transform stays from .merge - title fades in hero slot */
+}
+
 .intro-overlay.intro-shorts.fade .intro-subtitle {
   opacity: 0;
   transform: scale(0.95);
