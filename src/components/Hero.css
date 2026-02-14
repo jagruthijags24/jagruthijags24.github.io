@@ -72,6 +72,11 @@
   color: #1a1a1a;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
+}
+
+/* Keep JAGRUTHI and PULLAIAHGARI on same line */
+.hero-name-inline {
+  display: inline-block;
   white-space: nowrap;
 }
 
