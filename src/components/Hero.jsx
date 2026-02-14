@@ -4,10 +4,10 @@ import './Hero.css'
 const ROLES = ['Software Engineer', 'Web Developer', 'Full-Stack Developer', 'Data Analyst', 'ML Enthusiast']
 const INTRO_TEXT = "I am a Software Engineer specializing in full-stack development with React, Java, Spring Boot, AI and related technologies. I build scalable, user-friendly applications and transform data into strategic decisions."
 
-function Hero() {
+function Hero({ introOverlayDone }) {
   const [roleIndex, setRoleIndex] = useState(0)
   const [typedText, setTypedText] = useState('')
-  const [introDone, setIntroDone] = useState(false)
+  const [typingComplete, setTypingComplete] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -17,15 +17,16 @@ function Hero() {
   }, [])
 
   useEffect(() => {
+    if (!introOverlayDone) return
     if (typedText.length < INTRO_TEXT.length) {
       const timeout = setTimeout(() => {
         setTypedText(INTRO_TEXT.slice(0, typedText.length + 1))
       }, 35)
       return () => clearTimeout(timeout)
     } else {
-      setIntroDone(true)
+      setTypingComplete(true)
     }
-  }, [typedText])
+  }, [introOverlayDone, typedText])
 
   return (
     <section id="hero">
@@ -50,7 +51,7 @@ function Hero() {
               <span className="paren">);</span>
             </div>
             <p className="hero-intro">
-              {typedText}<span className={`typing-cursor ${introDone ? 'blink-only' : ''}`}>|</span>
+              {typedText}<span className={`typing-cursor ${typingComplete ? 'blink-only' : ''}`}>|</span>
             </p>
           </div>
           <div className="hero-buttons">

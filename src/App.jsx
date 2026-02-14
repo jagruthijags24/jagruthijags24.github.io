@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import IntroOverlay from './components/IntroOverlay'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -13,14 +14,16 @@ import Footer from './components/Footer'
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [introDone, setIntroDone] = useState(false)
 
   return (
     <>
+      {!introDone && <IntroOverlay onComplete={() => setIntroDone(true)} />}
       {menuOpen && <div className="menu-overlay" onClick={() => setMenuOpen(false)} aria-hidden="true" />}
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <AIAssistant />
+      {introDone && <AIAssistant />}
       <main>
-        <Hero />
+        <Hero introOverlayDone={introDone} />
         <About />
         <Projects />
         <Education />
